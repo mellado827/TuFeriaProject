@@ -1,14 +1,15 @@
-import React, {useState, useEffect} from 'react';
-import {View, StyleSheet} from 'react-native';
-import MapView, {PROVIDER_GOOGLE} from 'react-native-maps';
+import React from 'react';
+import {View, Text, StyleSheet} from 'react-native';
+// import MapView, {PROVIDER_GOOGLE} from 'react-native-maps';
 
 const AllowLocation = () => {
     return(
         <View>
-            <MapView
+            {/* <MapView
                 style={styles.map}
                 provider={PROVIDER_GOOGLE}
-            />
+            /> */}
+            <Text>Hola mundo</Text>
         </View>
     )
 }

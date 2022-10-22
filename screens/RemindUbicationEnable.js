@@ -1,9 +1,14 @@
+// libraries
 import {React} from 'react';
 import {View, Text, TouchableOpacity, Image, StyleSheet} from 'react-native';
 import { useFonts } from 'expo-font';
 
-const RemindUbicationEnable = ({navigation}) => {
+// functions
+import requestLocationPermission from '../functions/requestLocationPermission';
 
+
+const RemindUbicationEnable = ({navigation}) => { 
+  // fuente
   const [font] = useFonts({
     InterBold: require('../assets/fonts/InterBold.ttf'),
   });
@@ -17,8 +22,8 @@ const RemindUbicationEnable = ({navigation}) => {
         <Image source={require('../img/reminderEnableUbication.png')} style={styles.image} />
         <Text style={styles.title}>Recordá activar tu ubicación</Text>
         <Text style={styles.text}>Es importante que mantengas tu ubicación activa mientras usás la app para que puedas ver las ferias más cercanas a tu ubicación.</Text>
-        <TouchableOpacity style={styles.button}>
-          <Text style={styles.buttonText} onPress={() => navigation.navigate('AllowLocation')}>Continuar</Text>
+        <TouchableOpacity style={styles.button} onPress={requestLocationPermission}>
+          <Text style={styles.buttonText}>Habilitar ubicación</Text>
         </TouchableOpacity>
       </View>
     )
